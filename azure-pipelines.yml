@@ -55,18 +55,12 @@ jobs:
 
   - task: XamariniOS@2
     inputs:
-      solutionFile: '**/*.sln'
-      configuration: 'Release'
+      solutionFile: '**/*iOS.csproj'
+      configuration: '$(buildConfiguration)'
       buildForSimulator: true
       packageApp: false
       
       variables:
   buildConfiguration: 'Release'
 
-steps:
-- task: XamariniOS@2
-  inputs:
-    solutionFile: '**/*iOS.csproj'
-    configuration: '$(buildConfiguration)'
-    packageApp: false
-    buildForSimulator: true
+
